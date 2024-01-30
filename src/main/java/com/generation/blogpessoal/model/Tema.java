@@ -31,7 +31,7 @@ public class Tema {
 	@UpdateTimestamp //pega data do sistema ao cadastrar o registro
 	private LocalDateTime data;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 	
